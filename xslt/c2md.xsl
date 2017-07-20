@@ -251,7 +251,12 @@
   </xsl:template>
 
   <xsl:template match="ac:image">
-    <xsl:text>![]</xsl:text>
+    <xsl:text>![</xsl:text>
+    <xsl:value-of select="@ac:alt"/>
+    <xsl:if test="not(@ac:alt)">
+      <xsl:apply-templates mode="link-target"/>
+    </xsl:if>
+    <xsl:text>]</xsl:text>
     <xsl:text>(</xsl:text>
     <xsl:apply-templates mode="link-target"/>
     <xsl:text>)</xsl:text>
