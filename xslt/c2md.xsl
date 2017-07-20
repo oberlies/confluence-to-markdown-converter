@@ -82,7 +82,7 @@
   <xsl:template match="acxhtml:ul/acxhtml:li">
     <xsl:text>&#xa;</xsl:text>
     <xsl:for-each select="../ancestor::*[local-name(.)='ol' or local-name(.)='ul']">
-      <xsl:text>  </xsl:text>
+      <xsl:text>    </xsl:text>
     </xsl:for-each>
     <xsl:text>* </xsl:text>
     <xsl:apply-templates/>
@@ -91,7 +91,7 @@
   <xsl:template match="acxhtml:ol/acxhtml:li">
     <xsl:text>&#xa;</xsl:text>
     <xsl:for-each select="../ancestor::*[local-name(.)='ol' or local-name(.)='ul']">
-      <xsl:text>  </xsl:text>
+      <xsl:text>    </xsl:text>
     </xsl:for-each>
     <xsl:value-of select="count(./preceding-sibling::*)+1"/>
     <xsl:text>. </xsl:text>
